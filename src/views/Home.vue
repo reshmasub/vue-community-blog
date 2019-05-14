@@ -1,5 +1,5 @@
 <template>
-    <h3>Welcome to my Home Page!!!!</h3>
+<h1 class="text-center my-5">Welcome to my home page!!!</h1>
 </template>
 
 <script>
