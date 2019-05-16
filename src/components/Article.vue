@@ -3,7 +3,7 @@
         <div class="card-header fornt-weight-bold">{{article.title}}</div>
         <div class="card-body">
 
-            {{article.content.substring(0,200)}}
+            <div class="my-3" v-html="article.content.substring(0,200)"></div>
              <button class="btn btn-primary">Read more</button>
         </div>
        
