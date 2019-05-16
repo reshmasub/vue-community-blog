@@ -51,9 +51,11 @@ methods : {
             this.loading = false;
             this.$root.auth = response.data.data;
             localStorage.setItem('auth',JSON.stringify(response.data.data));
-            this.$router.push("home")
+             this.$noty.success("Successfully logged in.")
+            this.$router.push("/")
         }).catch(({response}) => {
             this.loading = false;
+            this.$noty.error("Oops ! Something went wrong. ")
             if(response.status === 401){
                 this.errors = {
                     email : ["Credentials provided does not match our records"]

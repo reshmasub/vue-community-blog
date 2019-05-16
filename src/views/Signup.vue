@@ -64,12 +64,14 @@ methods : {
             const {data} = response.data;
             localStorage.setItem('auth', JSON.stringify(data))
             this.$root.auth = data;
-            this.$router.push('home');
+            this.$noty.success("Successfully Registered.")
+            this.$router.push('/');
             
         }).catch(({response}) => {
             this.loading = false;
             this.submitted = true;
             this.errors = response.data;
+             this.$noty.error("Oops ! Something went wrong. ")
         })
     }
 }
