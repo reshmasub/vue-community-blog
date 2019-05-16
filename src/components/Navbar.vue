@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-       <router-link to="/" class="navbar-brand" href="#">
+       <router-link to="/" class="navbar-brand" >
           <img src="../assets/logo.jpg" width="30px" height="30px" alt>
        </router-link>
         <button
@@ -40,7 +40,7 @@
                 aria-expanded="false"
               >Hey {{authUser.name}}!</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" @click="logout()" href="#">Logout</a>
               </div>
             </li> 
           </ul>
@@ -60,6 +60,12 @@ export default {
       return this.$root.auth.user;
     }
 
+  },
+  methods : {
+    logout(){
+      localStorage.removeItem("auth");
+      this.$root.auth = {};
+    }
   }
 }
 </script>
