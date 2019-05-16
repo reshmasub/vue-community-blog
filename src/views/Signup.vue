@@ -38,6 +38,7 @@
 <script>
 
 import Axios from 'axios';
+import config from '@/config'
 
 export default {
      beforeRouteEnter(to, from, next){
@@ -62,7 +63,7 @@ data() {
 methods : {
     registerUser(){
           this.loading = true;
-        Axios.post('https://react-blog-api.bahdcasts.com/api/auth/register', {
+        Axios.post(`${config.apiUrl}/auth/register`, {
             name : this.name,
             email : this.email,
             password : this.password
