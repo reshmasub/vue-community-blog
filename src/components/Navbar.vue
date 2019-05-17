@@ -29,6 +29,11 @@
                       Signup
                   </router-link>
               </li>
+               <li class="nav-item" v-if="authUser">
+                  <router-link to="/articles/create" class="nav-link"> 
+                      Create New Article
+                  </router-link>
+              </li>
            <li class="nav-item dropdown" v-if="authUser">
               <a
                 class="nav-link dropdown-toggle"
